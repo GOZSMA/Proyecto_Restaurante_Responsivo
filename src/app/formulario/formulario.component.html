@@ -1,0 +1,48 @@
+<h1 class="text-center">Contacta con nosotros para cualquier asunto!</h1>
+
+<div class="container">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+        <div class="mb-4">
+            <label class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="name" name="name" required formControlName="name">
+            <div *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.errors?.['required']" class="alert alert-danger">
+                Este campo es requerido.
+            </div>
+            <div *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.errors?.['minlength']" class="alert alert-danger">
+                Necesitas {{ contactForm.get('name')?.errors?.['minlength']?.requiredLength }} caracteres mínimo.
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label for="form-label">Correo</label>
+            <input type="text" class="form-control" name="email" id="email" required formControlName="email">
+            <div *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.errors?.['required']" class="alert alert-danger">
+                Este campo es requerido.
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label for="form-label">Asunto</label>
+            <input type="text" class="form-control" name="asunto" id="asunto" required formControlName="asunto">
+            <div *ngIf="contactForm.get('asunto')?.touched && contactForm.get('asunto')?.errors?.['required']" class="alert alert-danger">
+                Este campo es requerido.
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label for="form-label">Mensaje</label>
+            <textarea name="mensaje" id="mensaje" class="form-control" rows="4" required formControlName="mensaje"></textarea>
+            <div *ngIf="contactForm.get('mensaje')?.touched && contactForm.get('mensaje')?.errors?.['required']" class="alert alert-danger">
+                Este campo es requerido.
+            </div>
+            <div *ngIf="contactForm.get('mensaje')?.touched && contactForm.get('mensaje')?.errors?.['minlength']" class="alert alert-danger">
+                Necesitas {{ contactForm.get('mensaje')?.errors?.['minlength']?.requiredLength }} caracteres mínimo.
+            </div>
+        </div>
+
+        <div class="d-grid float-end gap-2 col-4">
+            <button class="btn btn-info btn-lg" type="submit" [disabled]="contactForm.invalid">Enviar</button>
+        </div>
+    </form>
+</div>

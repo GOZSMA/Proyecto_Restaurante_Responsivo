@@ -1,0 +1,64 @@
+/* .pie {
+    margin-top: 12cm;
+} */
+
+.contacto button {
+    color: white;
+    background-color: transparent;
+    padding: 1.25em;
+    transition: all 0.2s ease-in-out;
+    border-radius: 20%;
+}
+
+.contacto button:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.texto-footer {
+    margin: 25px 0 0 0;
+}
+
+.copyright {
+    margin-top: 15px;
+}
+
+.seccion-oscura {
+    margin: 80px 0 0 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: white;
+    background-color: #000000;
+}
+
+.iconos-redes-sociales a {
+    /*tamaño del enlace */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    margin: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+    transition: all 0.2s ease-in;
+}
+
+.iconos-redes-sociales i {
+    /*tamaño del icono */
+    color: white;
+    font-size: 1.5rem;
+    transition: all 0.2s ease-in;
+}
+
+.iconos-redes-sociales a:hover {
+    /*fondo del icono con el mouse */
+    background-color: white;
+    border: wheat;
+}
+
+.iconos-redes-sociales a:hover i {
+    /*color del icono con el mouse*/
+    color: black;
+}
