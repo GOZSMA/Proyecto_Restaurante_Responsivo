@@ -15,6 +15,7 @@ import { PlatillosComponent } from './menu/platillos/platillos.component';
 import { VegetarianosComponent } from './menu/vegetarianos/vegetarianos.component';
 import { BebidasComponent } from './menu/bebidas/bebidas.component';
 import { FormularioComponent } from './formulario/formulario.component';
+import { TooltipModule } from 'ng2-tooltip-directive';
 
 @NgModule({
   declarations: [
@@ -29,13 +30,14 @@ import { FormularioComponent } from './formulario/formulario.component';
     PlatillosComponent,
     VegetarianosComponent,
     BebidasComponent,
-    FormularioComponent
+    FormularioComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

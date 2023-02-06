@@ -1,4 +1,5 @@
-<h1 class="text-center">Contacta con nosotros para cualquier asunto!</h1>
+<h1 class="text-center">
+    Contacta con nosotros para cualquier asunto!</h1>
 
 <div class="container">
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
@@ -19,6 +20,9 @@
             <input type="text" class="form-control" name="email" id="email" required formControlName="email">
             <div *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.errors?.['required']" class="alert alert-danger">
                 Este campo es requerido.
+            </div>
+            <div *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.errors?.['email']" class="alert alert-danger">
+                Ingresa un correo válido.
             </div>
         </div>
 
@@ -41,8 +45,8 @@
             </div>
         </div>
 
-        <div class="d-grid float-end gap-2 col-4">
-            <button class="btn btn-info btn-lg" type="submit" [disabled]="contactForm.invalid">Enviar</button>
+        <div class="d-grid float-end gap-2 col-4" data-toggle="tooltip" title="Revisa tu información">
+            <button class="btn btn-info btn-lg" type="submit" [disabled]="contactForm.invalid" data-toggle="tooltip" title="Información válida">Enviar</button>
         </div>
     </form>
 </div>
